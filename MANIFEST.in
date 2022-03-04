@@ -1,0 +1,2 @@
+recursive-include wagtailshowsimilaritems/static *
+recursive-include wagtailshowsimilaritems/templates *
