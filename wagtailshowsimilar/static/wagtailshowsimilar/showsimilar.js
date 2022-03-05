@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    Array.from(document.getElementsByClassName("show_similar_items_input")).forEach(
+    Array.from(document.getElementsByClassName("show_similar_input")).forEach(
       (el) => {
         ["keyup", "cut", "paste", "onchange"].forEach((ev) => {
           el.addEventListener(ev, () => timer(el));
@@ -10,14 +10,14 @@ document.addEventListener(
     );
 
     function timer(el) {
-      clearTimeout(el.dataset.showsimilaritems_timer);
-      el.dataset.showsimilaritems_timer = setTimeout(() => { search(el) }, 600);
+      clearTimeout(el.dataset.showsimilar_timer);
+      el.dataset.showsimilar_timer = setTimeout(() => { search(el) }, 600);
     };
 
     function search(el) {
       let url = new URL(
         window.location.protocol+ window.location.host +
-        "/admin/showsimilaritems/search/"
+        "/admin/showsimilar/search/"
       );
       url.searchParams.set("query", el.value);
       url.searchParams.set("field", el.getAttribute("name"));

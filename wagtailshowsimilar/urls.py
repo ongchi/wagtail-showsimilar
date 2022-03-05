@@ -4,7 +4,7 @@ try:
 except ImportError:
     from wagtail.admin.auth import require_admin_access
 
-from wagtailshowsimilaritems.views import search
+from wagtailshowsimilar.views import search
 
 urlpatterns = [
     path(r"search/", require_admin_access(search)),

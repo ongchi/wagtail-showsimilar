@@ -4,8 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 from wagtail.utils.widgets import WidgetWithScript
 
-class ShowSimilarItems(WidgetWithScript, TextInput):
-    template_name = "wagtailshowsimilaritems/showsimilaritems.html"
+class ShowSimilarWidget(WidgetWithScript, TextInput):
+    template_name = "wagtailshowsimilar/showsimilar.html"
 
     def __init__(self, instance, threshold, max_items):
         self.instance = instance
@@ -32,5 +32,5 @@ class ShowSimilarItems(WidgetWithScript, TextInput):
     @property
     def media(self):
         return forms.Media(
-            js=["wagtailshowsimilaritems/showsimilaritems.js"],
+            js=["wagtailshowsimilar/showsimilar.js"],
         )

@@ -31,7 +31,7 @@ def search(request):
                     if isinstance(q, Page):
                         url = reverse("wagtailadmin_pages:edit", args=(q.page_ptr.id,))
                     else:
-                        url = getattr(q, "showsimilaritems_url", lambda: None)()
+                        url = getattr(q, "showsimilar_url", lambda: None)()
                     response["items"].append({"value": getattr(q, field), "url": url})
             else:
                 response["is_trimmed"] = True

@@ -1,8 +1,8 @@
 from wagtail.admin.edit_handlers import FieldPanel
 
-from .widgets import ShowSimilarItems
+from .widgets import ShowSimilarWidget
 
-class ShowSimilarItemsPanel(FieldPanel):
+class ShowSimilarPanel(FieldPanel):
     def __init__(self, *args, **kwargs):
         self.threshold = kwargs.pop("score_threshold", 20)
         self.max_items = kwargs.pop("max_items", 10)
@@ -10,7 +10,7 @@ class ShowSimilarItemsPanel(FieldPanel):
         super().__init__(*args, **kwargs)
 
     def on_instance_bound(self):
-        self.widget = ShowSimilarItems(
+        self.widget = ShowSimilarWidget(
             instance=self.instance,
             threshold=self.threshold,
             max_items=self.max_items

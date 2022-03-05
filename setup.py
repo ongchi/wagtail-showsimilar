@@ -1,21 +1,21 @@
 from setuptools import setup, find_packages
 
-from wagtailshowsimilaritems import __version__
+from wagtailshowsimilar import __version__
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="wagtail-showsimilaritems",
+    name="wagtail-showsimilar",
     version=__version__,
     author="ongchi",
     author_email="ongchi@users.noreply.github.com",
     description="wagtail input panel",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/ongchi/wagtail-showsimilaritems",
+    url="https://github.com/ongchi/wagtail-showsimilar",
     project_urls={
-        "Bug Tracker": "https://github.com/ongchi/wagtail-showsimilaritems/issues",
+        "Bug Tracker": "https://github.com/ongchi/wagtail-showsimilar/issues",
     },
     install_requires=['wagtail>=2.3'],
     classifiers=[
