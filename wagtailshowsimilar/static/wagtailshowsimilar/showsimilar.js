@@ -46,6 +46,7 @@ document.addEventListener(
               } else {
                 let item = li.appendChild(document.createElement("a"));
                 item.href = d.url;
+                item.target = "_blank";
                 item.textContent = d.value;
               }
             });

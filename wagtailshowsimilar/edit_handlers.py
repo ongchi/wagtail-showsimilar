@@ -9,9 +9,19 @@ class ShowSimilarPanel(FieldPanel):
 
         super().__init__(*args, **kwargs)
 
-    def on_instance_bound(self):
         self.widget = ShowSimilarWidget(
-            instance=self.instance,
+            instance=None,
             threshold=self.threshold,
+            max_items=self.max_items
+        )
+
+    def on_instance_bound(self):
+        self.widget.instance = self.instance
+
+    def clone(self):
+        return self.__class__(
+            field_name=self.field_name,
+            classname=self.classname,
+            score_threshold=self.threshold,
             max_items=self.max_items
         )
