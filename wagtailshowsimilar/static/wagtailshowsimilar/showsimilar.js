@@ -1,10 +1,11 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    Array.from(document.getElementsByClassName("show_similar_input")).forEach(
+    Array.from(document.getElementsByClassName("showsimilar")).forEach(
       (el) => {
+        let input = el.previousElementSibling;
         ["keyup", "cut", "paste", "onchange"].forEach((ev) => {
-          el.addEventListener(ev, () => timer(el));
+          input.addEventListener(ev, () => timer(input));
         });
       }
     );
@@ -50,6 +51,10 @@ document.addEventListener(
                 item.textContent = d.value;
               }
             });
+            if (data.is_trimmed) {
+              let li = items_ul.appendChild(document.createElement("li"));
+              li.innerText = "...";
+            }
           }
         });
     };

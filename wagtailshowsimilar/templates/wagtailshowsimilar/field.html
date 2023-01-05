@@ -1,0 +1,7 @@
+{% extends "wagtailadmin/shared/field.html" %}
+
+{% block form_field %}
+{{ field }}
+<div data-label="{{ label }}" data-model="{{ target_model }}" data-id="{{ instance_id }}" data-threshold="{{ threshold }}" data-max_items="{{ max_items }}" class="showsimilar">
+</div>
+{% endblock %}
